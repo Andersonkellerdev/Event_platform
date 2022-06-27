@@ -3,35 +3,6 @@ import {gql, useQuery }from '@apollo/client';
 import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from "phosphor-react";
 import '@vime/core/themes/default.css'
 
-const GET_LESSON_BY_SLUG_QUERY = gql `
-    query GetLessonBySlug($slug : String) {
-  lesson(where: {slug: $slug}) {
-    description
-    videoId
-    title
-    teacher {
-      name
-      bio
-      avatarURL
-    }
-  }
-}
-
-`
-
-interface GetLessonBySlugResponse {
-    lesson: {
-        //key: string;
-        title: string;
-        videoID: string;
-        description: string;
-        teacher: {
-            bio: string;
-            avatarURL: string;
-            name: string;
-        }
-    }
-}
 
 interface VideoProps {
     lessonSlug: string;
@@ -133,3 +104,4 @@ export function Video(props : VideoProps) {
         </div>
     )
 }
+

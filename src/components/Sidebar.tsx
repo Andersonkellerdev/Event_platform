@@ -1,33 +1,14 @@
 import { Lesson } from "./Lesson";
 import {gql, useQuery }from '@apollo/client'
 import { lexicographicSortSchema } from "graphql";
+import { CodegenExtension } from "@graphql-codegen/cli";
+//import GetLessonQuery by graphql
 
-const GET_LESSONS_QUERY = gql`
- query MyQuery {
-  lessons(orderBy: availableAt_ASC, stage: PUBLISHED) {
-    availableAt
-    id
-    lessonType
-    slug
-    title
-  }
-} 
-
-`
-interface GetLessonsQueryResponse {
-    lessons: {
-        id: string
-        title: string
-        slug: string
-        availableAt: string
-        lessonType: 'live' | 'class'
-    }[]
-}
 
 
 export function Sidebar() {
 
-    const {data} = useQuery<GetLessonsQueryResponse>(GET_LESSONS_QUERY)
+    const {data} = useGetLessonQuery;
     return (
         <aside className="w-[438px] bg-gray-700 p-6 border-l border-gray-600">
             <span className="block pb-6 mb-6 text-2xl font-bold border-b border-gray-500">
