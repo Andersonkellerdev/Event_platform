@@ -3,7 +3,7 @@ import { useState, FormEvent } from "react";
 import { Icon } from "../components/Icon";
 import { useNavigate } from "react-router-dom";
 import { useCreateSubscriberMutation } from "../graphql/generated";
-import imgUrl from '../../src/assets/cold-mockup.png'
+import imgUrl from '../../src/assests/cold-mockup.png'
 
 
 
