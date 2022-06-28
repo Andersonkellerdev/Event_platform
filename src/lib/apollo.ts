@@ -6,5 +6,5 @@ export const client = new ApolloClient({
     headers: {
         'Authorization': `Bearer ${import.meta.env.VITE_API_ACESS_TOKEN}`
         },
-    cache: new InMemoryCache() 
+    cache:new InMemoryCache()
 })

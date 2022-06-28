@@ -2,13 +2,13 @@ import { Lesson } from "./Lesson";
 import {gql, useQuery }from '@apollo/client'
 import { lexicographicSortSchema } from "graphql";
 import { CodegenExtension } from "@graphql-codegen/cli";
-//import GetLessonQuery by graphql
+import { useGetLessonsQuery } from "../graphql/generated";
 
 
 
 export function Sidebar() {
 
-    const {data} = useGetLessonQuery;
+    const {data} = useGetLessonsQuery()
     return (
         <aside className="w-[438px] bg-gray-700 p-6 border-l border-gray-600">
             <span className="block pb-6 mb-6 text-2xl font-bold border-b border-gray-500">
