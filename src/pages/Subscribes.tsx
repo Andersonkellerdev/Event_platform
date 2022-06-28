@@ -70,7 +70,7 @@ export function Subscribles () {
                 </div>
             </div>
             
-            <img src={imgUrl} className="at-10" alt=""/>
+            <img src={imgUrl} className="mt-10" alt=""/>
        </div>
     )
 }
